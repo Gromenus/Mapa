@@ -8,13 +8,9 @@ let landmarks = JSON.parse(localStorage.getItem('landmarks')) || [];
 let markers = [];
 let currentRoute; // Globální proměnná pro trasu
 
-// Přidáme všechny uložené body zájmu na mapu
 landmarks.forEach(landmark => addMarker(landmark.lat, landmark.lng, landmark.name, landmark.color, landmark.address));
-
-// Aktualizace dropdownů po načtení bodů
 updateDropdowns();
 
-// Umožníme přidávat nové body kliknutím na mapu
 map.on('click', async (e) => {
   const name = prompt("Zadejte název landmarku:");
   if (!name) return;
