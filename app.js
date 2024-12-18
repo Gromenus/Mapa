@@ -6,7 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 let landmarks = JSON.parse(localStorage.getItem('landmarks')) || [];
 let markers = [];
-let currentRoute; // Globální proměnná pro trasu
+let currentRoute; 
 
 landmarks.forEach(landmark => addMarker(landmark.lat, landmark.lng, landmark.name, landmark.color, landmark.address));
 updateDropdowns();
